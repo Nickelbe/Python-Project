@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream>
+
+int main ()
+{
+    
+  std::vector<int> x0;
+  std::vector<int> y0;
+  std::vector<int> z0;
+  
+  
+  std::vector<std::vector<std::vector<int>>> bef;
+  std::vector<std::vector<std::vector<int>>> aft;
+  
+  std::vector<int> q;
+  size_t size;
+  
+  std::ofstream file("data.txt", std::ios::in);
+  
+  file << size;
+  
+  size_t x_val;
+  size_t y_val;
+  size_t z_val;
+  size_t q_val;
+  
+  
+  for(size_t i = 0; i < size;++i)
+  {
+     file << x_val << y_val << z_val << q_val;
+     x0.push_back(x_val);
+     y0.push_back(y_val);
+     z0.push_back(z_val);
+     q.push_back(q_val);
+  }
+  
+  
+  return 0;
+}
+
+double R_vec(int xq, int yq int zq, int x_cur, int y_cur, int z_cur)
+{
+    return sqrt( (x_cur - xq)*(x_cur - xq) + (y_cur - yq)*(y_cur - yq) + (z_cur - zq)*(z_cur - zq));
+}
+
+double next_coord()
